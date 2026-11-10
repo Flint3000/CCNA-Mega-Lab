@@ -1,36 +1,19 @@
 # Phase XX: <Titel>
 
 ## Ziel
-Was ist nach dieser Phase fertig, und was funktioniert danach, das vorher nicht funktioniert hat?
+Zwei Sätze: Was ist nach der Phase fertig?
 
 ## CCNA-Bezug
-Prüfungsthemen (z. B. 2.1 VLANs, 2.2 Trunks) und Verweis auf [`../docs/ccna-abdeckung.md`](../docs/ccna-abdeckung.md).
-
-## Ausgangslage
-Stand des Labs vor dieser Phase, relevante Voraussetzungen.
+Prüfungsthemen (Nummern aus [`../docs/ccna-abdeckung.md`](../docs/ccna-abdeckung.md)).
 
 ## Entscheidungen
-Warum wurde es so gelöst? Welche Alternativen gab es?
-- Entscheidung: ...
-  Begründung: ...
+- Entscheidung und kurze Begründung (3 bis 5 Stichpunkte)
 
 ## Konfiguration
-Nur die relevanten Auszüge, gruppiert nach Gerät. Vollständige Configs liegen in [`../configs/`](../configs/).
-
-### <Gerät>
-```
-! Befehle
-```
+Nur das Wesentliche, ein Gerät pro Konfigurationstyp. Vollständige Configs liegen in [`../configs/`](../configs/).
 
 ## Verifikation
-Welche Befehle belegen, dass es funktioniert? Ausgabe oder Screenshot einfügen.
+Drei bis fünf Ausgaben als Beleg (Befehl, Gerät, Ausgabe).
 
-| Befehl | Gerät | Erwartung |
-|---|---|---|
-| `show ...` | ... | ... |
-
-## Probleme und Learnings
-Was ist schiefgegangen, wie wurde der Fehler gefunden, was nimmst du mit?
-
-## Offene Punkte
-Was wurde bewusst zurückgestellt?
+## Probleme
+Nur eintragen, wenn es eine echte Fehlersuche gab (Symptom, Ursache, Lösung).
