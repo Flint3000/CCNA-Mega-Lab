@@ -11,8 +11,10 @@ Ziel: möglichst viele CCNA-Prüfungsthemen in einem zusammenhängenden, realist
 
 | Standort | Beschreibung |
 |---|---|
-| **Office A** (Hauptstandort) | 7 Switches (Access/Distribution), Multilayer-Switch als Layer-3-Gateway, Router0 mit Anbindung zum Internet |
-| **Office B** (Branch) | Router1 (Router-on-a-Stick), 2 Switches, Wireless LAN Controller mit Access Point, Server0 (DHCP/DNS) |
+| **Office A** (Hauptstandort) | Drei-Stufen-Design: 4 Access-Switches (ASW-A1 bis ASW-A4), 2 Multilayer-Distribution-Switches (DSW-A1, DSW-A2) als VLAN-Gateways, Core-Switch CSW-A1, Router R0 mit Anbindung zum Internet |
+| **Office B** (Branch) | Router R-B1 (Router-on-a-Stick), 2 Access-Switches (ASW-B1, ASW-B2), WLC-B1 mit Light Weight Access Point, Server S-A1 (DHCP/DNS) |
+
+**Namensschema:** Rolle, Standort, Nummer. `ASW` = Access, `DSW` = Distribution, `CSW` = Core, `R` = Router (z. B. `ASW-A1`, `DSW-A2`, `R-B1`).
 
 ## Umgesetzte CCNA-Themen
 
@@ -30,17 +32,13 @@ Die vollständige Zuordnung zu den offiziellen Prüfungsthemen steht in [`docs/c
 | Phase | Inhalt | Status |
 |---|---|---|
 | [01](phases/01-basis.md) | Basiskonfiguration aller Geräte | ☐ |
-| 02 | VLANs und Trunks | ☐ |
-| 03 | EtherChannel und Rapid PVST+ | ☐ |
-| 04 | Management-VLAN und SSH | ☐ |
-| 05 | IP-Adressierung und Inter-VLAN-Routing | ☐ |
-| 06 | Routing (statisch, OSPFv2) | ☐ |
-| 07 | IP-Services (DHCP, DNS, NAT, NTP, Syslog) | ☐ |
-| 08 | Security (ACLs, Layer-2-Security) | ☐ |
-| 09 | Wireless (WLC, WLAN mit WPA2-PSK) | ☐ |
-| 10 | Optional: IPv6 | ☐ |
+| [02](phases/02-vlans-trunks.md) | Layer 2: VLANs, Trunks, EtherChannel, Spanning Tree | ☐ |
+| [03](phases/03-ip-connectivity.md) | IP Connectivity: Adressierung, Routing, OSPF | ☐ |
+| [04](phases/04-ip-services.md) | IP Services: DHCP, DNS, NAT, NTP, Syslog, SSH | ☐ |
+| [05](phases/05-security.md) | Security: ACLs, Port Security, DHCP Snooping, DAI | ☐ |
+| [06](phases/06-wireless-ipv6.md) | Wireless und optional IPv6 | ☐ |
 
-Jede Phase folgt derselben Struktur: Ziel, Entscheidungen, Konfiguration, Verifikation, Probleme und Learnings (Vorlage: [`phases/00-vorlage.md`](phases/00-vorlage.md)).
+Jede Phase hat dieselbe kurze Struktur: Ziel, Entscheidungen, Konfiguration, Verifikation (Vorlage: [`phases/00-vorlage.md`](phases/00-vorlage.md)).
 
 ## Dokumentation
 
