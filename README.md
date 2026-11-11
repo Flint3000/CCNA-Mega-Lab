@@ -18,8 +18,6 @@ Ziel: möglichst viele CCNA-Prüfungsthemen in einem zusammenhängenden, realist
 
 ## Umgesetzte CCNA-Themen
 
-Die vollständige Zuordnung zu den offiziellen Prüfungsthemen steht in [`docs/ccna-abdeckung.md`](docs/ccna-abdeckung.md).
-
 | Bereich | Themen im Lab |
 |---|---|
 | Network Access | VLANs, Voice-VLAN, Trunks, Native-VLAN, EtherChannel (LACP), Rapid PVST+, PortFast, BPDU Guard, CDP/LLDP, WLAN mit WLC |
