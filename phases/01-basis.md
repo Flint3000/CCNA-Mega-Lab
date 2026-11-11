@@ -19,7 +19,18 @@ Topologie ist in Packet Tracer verkabelt, Geräte sind unkonfiguriert. Verkabelu
 - **Hash-Typ:** `algorithm-type` steht in Packet Tracer nicht zur Verfügung, deshalb Typ 5. Auf echter Hardware würde ich Typ 8 oder 9 nehmen (`algorithm-type scrypt`).
 
 ## Konfiguration
-Pro Gerät `<HOSTNAME>`, `<ADMIN-USER>` und `<LAB-PASSWORT>` ersetzen.
+Basis-Config für jedes Gerät (`<HOSTNAME>`, `<ADMIN-USER>` und `<LAB-PASSWORT>` pro Gerät ersetzen):
+```
+enable
+configure terminal
+hostname <HOSTNAME>
+enable secret <LAB-PASSWORT>
+username <ADMIN-USER> secret <LAB-PASSWORT>
+line console 0
+ login local
+end
+copy running-config startup-config
+```
 
 | Gerät | Hostname |
 |---|---|
