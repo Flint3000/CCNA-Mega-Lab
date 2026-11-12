@@ -1,9 +1,6 @@
 # CCNA-Lab: Campus-Netzwerk mit Hauptstandort und Branch Office
 
-Zwei-Standort-Netzwerk in Cisco Packet Tracer, gebaut als praktische Vorbereitung auf die **CCNA 200-301 (v1.1)** und als dokumentiertes Portfolio-Projekt.
-Ziel: möglichst viele CCNA-Prüfungsthemen in einem zusammenhängenden, realistischen Netz konfigurieren, verifizieren und nachvollziehbar dokumentieren.
-
-> Packet-Tracer-Version: `<VERSION EINTRAGEN>` · Stand: `<DATUM>`
+Zwei-Standort-Netzwerk in Cisco Packet Tracer, gebaut als praktische Vorbereitung auf die **CCNA 200-301 (v1.1)** und als dokumentiertes Portfolio-Projekt. Die Topologie ist an ein Lab aus Jeremys CCNA-Kurs angelehnt. Konfiguration und Dokumentation sind von mir.
 
 ## Topologie
 
@@ -12,39 +9,37 @@ Ziel: möglichst viele CCNA-Prüfungsthemen in einem zusammenhängenden, realist
 | Standort | Beschreibung |
 |---|---|
 | **Office A** (Hauptstandort) | Drei-Stufen-Design: 4 Access-Switches (ASW-A1 bis ASW-A4), 2 Multilayer-Distribution-Switches (DSW-A1, DSW-A2) als VLAN-Gateways, Core-Switch CSW-A1, Router R0 mit Anbindung zum Internet |
-| **Office B** (Branch) | Router R-B1 (Router-on-a-Stick), 2 Access-Switches (ASW-B1, ASW-B2), WLC-B1 mit Light Weight Access Point, Server S-A1 (DHCP/DNS) |
+| **Office B** (Branch) | Router R-B1 (Router-on-a-Stick), 2 Access-Switches (ASW-B1, ASW-B2), WLC-B1 mit Access Point LWAP-B1, Server S-A1 (DHCP/DNS) |
 
 **Namensschema:** Rolle, Standort, Nummer. `ASW` = Access, `DSW` = Distribution, `CSW` = Core, `R` = Router (z. B. `ASW-A1`, `DSW-A2`, `R-B1`).
 
-## Umgesetzte CCNA-Themen
+## CCNA-Themen im Lab
 
-| Bereich | Themen im Lab |
-|---|---|
-| Network Access | VLANs, Voice-VLAN, Trunks, Native-VLAN, EtherChannel (LACP), Rapid PVST+, PortFast, BPDU Guard, CDP/LLDP, WLAN mit WLC |
-| IP Connectivity | Inter-VLAN-Routing (SVI und Router-on-a-Stick), statische Routen, OSPFv2 (Single Area) |
-| IP Services | DHCP inkl. Relay, DNS, NAT/PAT, NTP, Syslog, SSH |
-| Security | Device Hardening, ACLs, Port Security, DHCP Snooping, Dynamic ARP Inspection |
+| Bereich | Themen | Stand |
+|---|---|---|
+| Network Access | VLANs, Voice-VLAN, Trunks, Native-VLAN, EtherChannel (LACP), Rapid PVST+, PortFast, BPDU Guard, Root Guard, CDP | umgesetzt |
+| IP Connectivity | Inter-VLAN-Routing (SVI und Router-on-a-Stick), statische Default-Route, OSPFv2 (Single Area) | umgesetzt |
+| IP Services | DHCP mit Relay, DNS, NAT/PAT, NTP, Syslog, SSH | geplant |
+| Security | ACLs, Port Security, DHCP Snooping, DAI | geplant |
+| Wireless und IPv6 | WLAN mit WLC, optional IPv6 | geplant |
 
 ## Aufbau in Phasen
 
 | Phase | Inhalt | Status |
 |---|---|---|
-| [01](phases/01-basis.md) | Basiskonfiguration aller Geräte | ☐ |
-| [02](phases/02-vlans-trunks.md) | Layer 2: VLANs, Trunks, EtherChannel, Spanning Tree | ☐ |
-| [03](phases/03-ip-connectivity.md) | IP Connectivity: Adressierung, Routing, OSPF | ☐ |
-| [04](phases/04-ip-services.md) | IP Services: DHCP, DNS, NAT, NTP, Syslog, SSH | ☐ |
-| [05](phases/05-security.md) | Security: ACLs, Port Security, DHCP Snooping, DAI | ☐ |
-| [06](phases/06-wireless-ipv6.md) | Wireless und optional IPv6 | ☐ |
+| [01](phases/01-basis.md) | Basiskonfiguration aller Geräte | ☑ |
+| [02](phases/02-vlans-trunks.md) | Layer 2: VLANs, Trunks, EtherChannel, Spanning Tree | ☑ |
+| [03](phases/03-ip-connectivity.md) | IP Connectivity: Adressierung, Routing, OSPF | ☑ |
+| 04 | IP Services: DHCP, DNS, NAT, NTP, Syslog, SSH | geplant |
+| 05 | Security: ACLs, Port Security, DHCP Snooping, DAI | geplant |
+| 06 | Wireless und optional IPv6 | geplant |
 
-Jede Phase hat dieselbe kurze Struktur: Ziel, Entscheidungen, Konfiguration, Verifikation (Vorlage: [`phases/00-vorlage.md`](phases/00-vorlage.md)).
+Jede Phase hat dieselbe kurze Struktur: Ziel, CCNA-Bezug, Entscheidungen, Konfiguration, Verifikation, Probleme und Learnings (Vorlage: [`phases/00-vorlage.md`](phases/00-vorlage.md)).
 
 ## Dokumentation
 
 - [`docs/ip-plan.md`](docs/ip-plan.md): Adressierung, VLANs, Subnetze
 - [`docs/port-table.md`](docs/port-table.md): Verkabelung, Port für Port
-- [`docs/design-decisions.md`](docs/design-decisions.md): warum das Netz so gebaut ist
-- [`configs/`](configs/): finale Konfiguration pro Gerät
-- [`troubleshooting/`](troubleshooting/): gezielt eingebaute Fehler mit Analyse und Lösung
 
 ## Adressierung auf einen Blick
 
@@ -59,10 +54,11 @@ Jede Phase hat dieselbe kurze Struktur: Ziel, Entscheidungen, Konfiguration, Ver
 
 ## Bewusste Vereinfachungen
 
-- `<z. B. Branch ohne Gateway-Redundanz: Ausfall von SW3 trennt SW7 vom Router>`
-- `<z. B. zentrales DHCP auf Server0, Office A nutzt Relay über die WAN-Strecke>`
+- Die VLAN-Gateways in Office A sind auf DSW-A1 (VLAN 10, 20, 99) und DSW-A2 (VLAN 30, 40) verteilt, ohne FHRP. Fällt ein DSW aus, haben seine VLANs kein Gateway mehr.
+- Office B hat nur einen Weg zum Router: Fällt ASW-B1 aus, ist ASW-B2 mit AP und WLC vom Router getrennt.
+- Loop Guard ist in Packet Tracer nicht verfügbar und deshalb nicht konfiguriert.
 
 ## Hinweise
 
-- Alle Passwörter in diesem Repository sind Lab-Passwörter und im Repo durch Platzhalter ersetzt.
+- Alle Passwörter in diesem Repository sind Lab-Passwörter und durch Platzhalter ersetzt.
 - Das Lab ist eine Simulation. Einzelne Befehle und Funktionen verhalten sich in Packet Tracer anders als auf echter Hardware.
