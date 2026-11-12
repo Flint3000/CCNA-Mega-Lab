@@ -4,16 +4,16 @@
 Zwei Sätze: Was ist nach der Phase fertig?
 
 ## CCNA-Bezug
-Prüfungsthemen (Nummern aus [`../docs/ccna-abdeckung.md`](../docs/ccna-abdeckung.md)).
+Prüfungsthemen die im Lab bearbeitet wurden.
 
 ## Entscheidungen
-- Entscheidung und kurze Begründung (3 bis 5 Stichpunkte)
+Entscheidungen und kurze Begründung.
 
 ## Konfiguration
-Nur das Wesentliche, ein Gerät pro Konfigurationstyp. Vollständige Configs liegen in [`../configs/`](../configs/).
+Nur das Wesentliche, ein Gerät pro Konfigurationstyp.
 
 ## Verifikation
-Drei bis fünf Ausgaben als Beleg (Befehl, Gerät, Ausgabe).
+Exemplarische Ausgaben als Beleg (Befehl, Gerät, Ausgabe).
 
-## Probleme
-Nur eintragen, wenn es eine echte Fehlersuche gab (Symptom, Ursache, Lösung).
+## Probleme und Learnings
+Fehlersuche (Symptom, Ursache, Lösung) und Erkenntnisse aus dem Lab.
