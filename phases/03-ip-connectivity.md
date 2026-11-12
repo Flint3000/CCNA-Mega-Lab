@@ -334,7 +334,7 @@ Reply from 10.2.99.100: bytes=32 time<1ms TTL=124
 Reply from 10.2.99.100: bytes=32 time<1ms TTL=124
 ```
 
-## Probleme
+## Probleme und Learnings
 - **`default-information originate` Die Verbindung von R0 zum ISP muss zuerst stehen, bevor die konfigurierte default route per OSPF kommuniziert wird.
 - **Die PT-Cloud braucht ein zweites Ethernet-Modul,** sonst lässt sich nur ein Router anschließen (ISP oder R0). Im Reiter „Physical“ das Gerät ausschalten, das Modul `PT-CLOUD-NM-1CGE` (1-Port GigabitEthernet) einsetzen und das Gerät wieder anschalten.
 - **Passive SVIs erscheinen trotzdem in `show ip ospf interface`.** Sie stehen dort mit „No Hellos (Passive interface)“, das ist der Beleg, dass sie passiv sind.
