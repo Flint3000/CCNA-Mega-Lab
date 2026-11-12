@@ -335,7 +335,7 @@ Reply from 10.2.99.100: bytes=32 time<1ms TTL=124
 ```
 
 ## Probleme
-- **`default-information originate` verteilt nur, was R0 selbst hat:** R0 gibt die Default-Route nur weiter, wenn er selbst eine hat. Die Verbindung zum ISP und die statische Default-Route müssen deshalb zuerst stehen.
+- **`default-information originate` Die Verbindung von R0 zum ISP muss zuerst stehen, bevor die konfigurierte default route per OSPF kommuniziert wird.
 - **Die PT-Cloud braucht ein zweites Ethernet-Modul,** sonst lässt sich nur ein Router anschließen (ISP oder R0). Im Reiter „Physical“ das Gerät ausschalten, das Modul `PT-CLOUD-NM-1CGE` (1-Port GigabitEthernet) einsetzen und das Gerät wieder anschalten.
 - **Passive SVIs erscheinen trotzdem in `show ip ospf interface`.** Sie stehen dort mit „No Hellos (Passive interface)“, das ist der Beleg, dass sie passiv sind.
 - **Bei ROAS müssen die VLANs nicht auf dem Router existieren.** Der Router (2911 ohne Switch-Modul) arbeitet nur auf Layer 3 und ordnet Frames anhand des 802.1Q-Tags dem Subinterface zu (`encapsulation dot1q <ID>`, beim Native-VLAN mit `native`). Dass `show vlan brief` in Packet Tracer trotzdem die Standard-VLANs (1, 1002 bis 1005) anzeigt, ist für die Funktion ohne Bedeutung.
