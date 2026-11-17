@@ -7,7 +7,7 @@
 - Verbindungen zwischen Geräten sind /30-Netze aus 10.0.0.0/24, Loopbacks 10.255.0.x/32 (Router-IDs).
 - Internet-Link 203.0.113.0/30 (Dokumentationsbereich, Platzhalter für öffentliche Adressen), NAT/PAT auf R0.
 - Gateways der Office-A-VLANs sind auf die beiden Distribution-Switches verteilt: DSW-A1 für VLAN 10, 20, 99, DSW-A2 für VLAN 30, 40.
-- DHCP und DNS zentral auf S-A1 (10.2.200.10), Office A nutzt DHCP-Relay (`ip helper-address`).
+- DHCP und DNS zentral auf S-A2 (10.2.200.10), Office A nutzt DHCP-Relay (`ip helper-address`).
 
 ## VLANs und Subnetze
 
@@ -20,7 +20,7 @@
 | 99 | IT-MGMT | Office A | 10.1.99.0/24 | 10.1.99.1 | DSW-A1, SVI Vlan99 | statisch | Geräteverwaltung, Admin-PC4 |
 | 50 | PUBLIC | Office B | 10.2.50.0/24 | 10.2.50.1 | R-B1, Subinterface G0/1.50 | 10.2.50.20 – .254 | L-B1 (WLAN über WLC/AP) |
 | 99 | IT-MGMT | Office B | 10.2.99.0/24 | 10.2.99.1 | R-B1, Subinterface G0/1.99 | statisch, AP per DHCP (.50 – .59) | Geräteverwaltung, Admin-PC7, WLC-B1, AP |
-| – | SERVER | Office B | 10.2.200.0/24 | 10.2.200.1 | R-B1, G0/2 (Routed Port) | statisch | S-A1, kein VLAN |
+| – | SERVER | Office B | 10.2.200.0/24 | 10.2.200.1 | R-B1, G0/2 (Routed Port) | statisch | S-A2, kein VLAN |
 | 999 | NATIVE | alle Trunks | – | – | – | – | ungenutzt, nur Native-VLAN |
 
 ## Verbindungsnetze
