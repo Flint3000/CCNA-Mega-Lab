@@ -85,6 +85,6 @@
 | ASW-B2 | Vlan99 | 10.2.99.12/24 | VLAN 99 IT-MGMT | 10.2.99.1 | Verwaltungs-IP |
 | WLC-B1 | Management | 10.2.99.20/24 | VLAN 99 IT-MGMT | 10.2.99.1 | Wireless LAN Controller |
 | LWAP-B1 | G0/0 | DHCP (10.2.99.50 – .59) | VLAN 99 IT-MGMT | 10.2.99.1 |  |
-| S-A1 | FastEthernet0 | 10.2.200.10/24 | Server-Netz | 10.2.200.1 | DHCP, DNS |
+| S-B1 | FastEthernet0 | 10.2.200.10/24 | Server-Netz | 10.2.200.1 | DHCP, DNS |
 | PC7 | FastEthernet0 | 10.2.99.100/24 | VLAN 99 IT-MGMT | 10.2.99.1 | Admin-PC (statisch) |
 | L-B1 | Wireless0 | DHCP | VLAN 50 PUBLIC | per DHCP | WLAN über AP/WLC |
