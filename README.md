@@ -19,9 +19,9 @@ Zwei-Standort-Netzwerk in Cisco Packet Tracer, gebaut als praktische Vorbereitun
 |---|---|---|
 | Network Access | VLANs, Voice-VLAN, Trunks, Native-VLAN, EtherChannel (LACP), Rapid PVST+, PortFast, BPDU Guard, Root Guard, CDP | umgesetzt |
 | IP Connectivity | Inter-VLAN-Routing (SVI und Router-on-a-Stick), statische Default-Route, OSPFv2 (Single Area) | umgesetzt |
-| IP Services | DHCP mit Relay, DNS, NAT/PAT, NTP, Syslog, SSH | geplant |
-| Security | ACLs, Port Security, DHCP Snooping, DAI | geplant |
-| Wireless und IPv6 | WLAN mit WLC, optional IPv6 | geplant |
+| IP Services | DHCP mit Relay, DNS, NAT/PAT, NTP, SSH, Syslog, SNMP | teilweise umgesetzt (Syslog, SNMP offen) |
+| Security | ACLs, Port Security, DHCP Snooping, DAI | umgesetzt (ACL für das Public-WLAN folgt mit dem WLAN) |
+| Wireless, VPN und IPv6 | WLAN mit WLC, Site-to-Site-VPN, optional IPv6 | geplant |
 
 ## Aufbau in Phasen
 
@@ -30,9 +30,9 @@ Zwei-Standort-Netzwerk in Cisco Packet Tracer, gebaut als praktische Vorbereitun
 | [01](phases/01-basis.md) | Basiskonfiguration aller Geräte | ☑ |
 | [02](phases/02-vlans-trunks.md) | Layer 2: VLANs, Trunks, EtherChannel, Spanning Tree | ☑ |
 | [03](phases/03-ip-connectivity.md) | IP Connectivity: Adressierung, Routing, OSPF | ☑ |
-| 04 | IP Services: DHCP, DNS, NAT, NTP, Syslog, SSH | geplant |
-| 05 | Security: ACLs, Port Security, DHCP Snooping, DAI | geplant |
-| 06 | Wireless und optional IPv6 | geplant |
+| [04](phases/04-ip-services.md) | IP Services: DHCP, DNS, NAT, NTP, SSH, Syslog, SNMP | in Arbeit (DHCP, DNS, NAT, NTP, SSH fertig; Syslog, SNMP, TFTP-Backup offen; Stand 20.11.2026) |
+| [05](phases/05-security.md) | Security: ACLs, Port Security, DHCP Snooping, DAI | in Arbeit (ACLs, Port Security und DHCP Snooping getestet, DAI konfiguriert, im Packet Tracer nicht nachweisbar; Stand 20.11.2026) |
+| 06 | Wireless, Site-to-Site-VPN und optional IPv6 | geplant |
 
 Jede Phase hat dieselbe kurze Struktur: Ziel, CCNA-Bezug, Entscheidungen, Konfiguration, Verifikation, Probleme und Learnings (Vorlage: [`phases/00-vorlage.md`](phases/00-vorlage.md)).
 
